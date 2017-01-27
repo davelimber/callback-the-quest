@@ -28,7 +28,7 @@ function QuestService(){
   }
 
   this.checkAnswer = function(guess){
-    if(guess == currentQuestion.answer){
+    if(guess == currentQuestion.answer.toLowerCase()){
       currentQuestionIndex++
       return true
     }else{

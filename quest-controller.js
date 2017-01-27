@@ -1,13 +1,21 @@
+console.log(2)
 function QuestController(){
-
-  var qs = new QuestService()
-
+  console.log(4)
+  var qs = new QuestService(ready)
+  console.log(10)
   var narrativeElem = document.getElementById('narrative')
   var questionElem = document.getElementById('active-question')
 
 
+  function ready(){
+    console.log(14)
+    document.getElementById('spinner').remove()
+    getQuestion()
+  }
+
+
   function getQuestion(){
-    debugger
+    console.log(15)
     var question = qs.getNextQuestion()
     if(question.victory){
       return onWin()
@@ -15,7 +23,10 @@ function QuestController(){
     narrativeElem.innerText = question.narrative
     questionElem.innerText = question.body
   }
-  getQuestion()
+
+  this.start = function(){
+    getQuestion()
+  }
 
   this.checkGuess = function(e){
     e.preventDefault()
@@ -44,5 +55,5 @@ function QuestController(){
   }
 
 
-
+console.log(11)
 }

@@ -12,16 +12,20 @@
     <button onclick="questCtrl.reset()">Reset</button>
 
     <div>
+      <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" id="spinner" alt="">
       <p id="narrative">The narrative begins here</p>
       <p id="active-question">The Question will go here</p>
-      <form onsubmit="questCtrl.checkGuess(event)">
+      <form id="bleh" onsubmit="questCtrl.checkGuess(event)">
           <input type="text" name="guess" required/>
           <button type="submit">....I Think?</button>
           <button type="reset">CLEAR</button>
       </form>
     </div>
 
+<!--LOAD LIBRARIES-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
+<!--LOAD MY CODE-->
 <script src="quest-service.js"></script>
 <script src="quest-controller.js"></script>
 <script src="app.js"></script>

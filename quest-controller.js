@@ -1,14 +1,21 @@
 console.log(2)
 function QuestController(){
   console.log(4)
-  var qs = new QuestService(getQuestion)
+  var qs = new QuestService(ready)
   console.log(10)
   var narrativeElem = document.getElementById('narrative')
   var questionElem = document.getElementById('active-question')
 
 
-  function getQuestion(){
+  function ready(){
     console.log(14)
+    document.getElementById('spinner').remove()
+    getQuestion()
+  }
+
+
+  function getQuestion(){
+    console.log(15)
     var question = qs.getNextQuestion()
     if(question.victory){
       return onWin()

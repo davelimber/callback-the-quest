@@ -1,7 +1,7 @@
 console.log(1)
-function QuestService(getQuestion){
+function QuestService(ready){
   console.log(5)
-  if(typeof getQuestion !== 'function'){
+  if(typeof ready !== 'function'){
     return console.error('I\'m sorry dave I cannot do that')
   }
 
@@ -18,13 +18,13 @@ function QuestService(getQuestion){
 
   function loadQuestions(){
     console.log(7)
+
     $.get(baseUrl).then(function(response){
       console.log(13)
       console.log(response)
       questions = response
-      
-      getQuestion()
-      console.log(15)
+      ready()
+      console.log(16)
     })
   }
   console.log(6)
